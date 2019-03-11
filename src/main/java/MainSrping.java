@@ -1,3 +1,4 @@
+import implementation.SomeBean;
 import implementation.User;
 import implementation.UserRepository;
 import org.springframework.context.ApplicationContext;
@@ -7,10 +8,16 @@ public class MainSrping {
 
     public static void main(String[] args) {
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("konfiguracja.xml");
-        UserRepository repozytoriumUzytkownikow = context.getBean("repozytoriumUzytkownikow", UserRepository.class);
-        User marek = repozytoriumUzytkownikow.createUser("Marek");
-        User Wacek = repozytoriumUzytkownikow.createUser("Wacek");
+//        ApplicationContext context = new ClassPathXmlApplicationContext("konfiguracja.xml");
+//        UserRepository repozytoriumUzytkownikow = context.getBean("repozytoriumUzytkownikow", UserRepository.class);
+//        User marek = repozytoriumUzytkownikow.createUser("Marek");
+//        User Wacek = repozytoriumUzytkownikow.createUser("Wacek");
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("konfiguracja2.xml");
+        SomeBean tempBean = context.getBean("someBean", SomeBean.class);
+
+
+
     }
 
     

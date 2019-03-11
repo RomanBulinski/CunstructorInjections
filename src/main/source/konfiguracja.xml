@@ -5,13 +5,16 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="mojLogger" class="implementation.Logger">
-        <property name="name" value="moj logger"/>
+        <property name="name" value="mojLogger"/>
         <property name="version" value="2"></property>
     </bean>
     <bean id="repozytoriumUzytkownikow" class="implementation.UserRepository">
-        <property name="logger" ref="mojLogger"></property>
-    </bean>
+        <!--<property name="logger" ref="mojLogger"></property>-->
 
+        <constructor-arg index="1" value="http://127.0.0.1 zmyslona nazwa" ></constructor-arg>
+        <constructor-arg ref="mojLogger" ></constructor-arg>
+
+    </bean>
 
 </beans>
 
